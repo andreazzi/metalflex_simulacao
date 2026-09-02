@@ -1,0 +1,5 @@
+estado,n_leads_aprovados,handoff_medio,handoff_mediana,handoff_p10,handoff_p90,taxa_reuniao_util
+Estado A,58062,0.5,0.5,0.5,0.5,0.5997
+Estado B,58062,0.5,0.5,0.5,0.5,0.5997
+Estado C,58300,0.5,0.5,0.5,0.5,0.6004
+Estado D,58300,0.5,0.5,0.5,0.5,0.6004

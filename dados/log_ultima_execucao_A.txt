@@ -1,0 +1,1 @@
+[rodar_ao_vivo] Estado A | 300 leads | intervalo=1.2s/lead novo | modo=replica 1 (identica ao lote) | saida=../saidas/historico_estado_a.jsonl

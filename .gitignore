@@ -1,0 +1,26 @@
+# Pastas de arquivamento de rodadas anteriores (~73 MB).
+# São geradas automaticamente pela Etapa 0 do replicar.sh a cada execução.
+# Não entram no repositório: o que interessa para reprodução é o código e a
+# rodada oficial, e qualquer pessoa regenera essas pastas rodando o script.
+saidas/_arquivo_*/
+saidas/_scratch_*
+
+# Ambiente e cache do Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Configuração local de ferramentas de desenvolvimento
+.claude/

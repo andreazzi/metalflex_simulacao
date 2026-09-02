@@ -1,0 +1,2 @@
+[rodar_ao_vivo] Estado C | 2000 leads | intervalo=0.15s/lead novo | saida=../saidas/historico_estado_c.jsonl
+[rodar_ao_vivo] Concluido. Fechados: 127/2000
