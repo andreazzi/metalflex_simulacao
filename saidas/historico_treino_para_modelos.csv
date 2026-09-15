@@ -562,7 +562,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 17725,Treino_0560,servicos,inbound,31,44627.06,0.729,196,0.5268,0
 18433,Treino_0561,servicos,outbound,31,42281.4,0.647,339,0.4327,0
 10962,Treino_0562,servicos,outbound,31,37107.04,0.608,145,0.4787,0
-18257,Treino_0563,varejo,inbound,31,46131.76,0.32,355,0.5345,1
+18257,Treino_0563,varejo,inbound,31,46131.76,0.32,355,0.5345,0
 18361,Treino_0564,tecnologia,inbound,31,54356.88,0.31,396,0.2373,0
 18537,Treino_0565,industria,inbound,31,63380.52,0.35,26,0.01,0
 14081,Treino_0566,servicos,inbound,31,60973.31,0.184,100,0.6756,0
@@ -838,7 +838,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 19856,Treino_0836,varejo,inbound,48,59502.88,0.7,374,0.3646,0
 16215,Treino_0837,servicos,inbound,48,49638.68,0.969,440,0.7833,1
 11584,Treino_0838,industria,inbound,48,34819.75,0.807,214,0.2651,0
-11840,Treino_0839,saude,inbound,48,44965.69,0.66,445,0.9223,1
+11840,Treino_0839,saude,inbound,48,44965.69,0.66,445,0.9223,0
 12531,Treino_0840,industria,inbound,48,94490.0,0.451,342,0.7033,0
 18186,Treino_0841,industria,inbound,48,47382.58,0.366,467,0.2722,0
 10174,Treino_0842,tecnologia,inbound,48,43675.05,0.246,220,0.1711,0
@@ -949,7 +949,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 16581,Treino_0947,varejo,outbound,54,76680.39,0.955,156,0.3297,0
 15671,Treino_0948,servicos,inbound,54,52817.87,0.361,392,0.4731,0
 15227,Treino_0949,industria,indicacao,54,18113.67,0.424,490,0.5913,0
-10099,Treino_0950,industria,indicacao,54,53725.59,0.549,199,0.5519,1
+10099,Treino_0950,industria,indicacao,54,53725.59,0.549,199,0.5519,0
 15702,Treino_0951,industria,inbound,54,20358.0,0.736,112,0.2979,0
 13018,Treino_0952,servicos,outbound,54,58261.05,0.107,438,0.4047,0
 11994,Treino_0953,industria,inbound,54,26698.33,0.981,340,0.5371,0
@@ -1028,7 +1028,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 11744,Treino_1026,varejo,inbound,59,89384.81,0.202,146,0.3513,0
 18864,Treino_1027,tecnologia,inbound,59,84987.65,0.543,493,0.6049,0
 15228,Treino_1028,saude,inbound,59,53431.24,0.627,390,0.3653,0
-13257,Treino_1029,saude,inbound,59,18155.71,0.882,228,0.4095,1
+13257,Treino_1029,saude,inbound,59,18155.71,0.882,228,0.4095,0
 14921,Treino_1030,industria,outbound,59,36102.68,0.963,259,0.4941,0
 15689,Treino_1031,industria,inbound,59,17045.32,0.566,172,0.1774,0
 16291,Treino_1032,industria,inbound,59,59392.55,0.719,143,0.1208,0
@@ -1319,7 +1319,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 15857,Treino_1317,industria,outbound,74,23915.35,0.245,478,0.235,0
 16038,Treino_1318,servicos,inbound,74,62264.87,0.239,320,0.0762,0
 19134,Treino_1319,servicos,inbound,74,56812.13,0.368,397,0.4157,0
-15670,Treino_1320,tecnologia,outbound,74,77204.52,0.179,459,0.6254,1
+15670,Treino_1320,tecnologia,outbound,74,77204.52,0.179,459,0.6254,0
 12970,Treino_1321,tecnologia,indicacao,74,60318.7,0.129,7,0.0226,0
 15338,Treino_1322,saude,indicacao,74,65840.99,0.262,310,0.312,0
 15980,Treino_1323,industria,inbound,74,24716.59,0.021,387,0.2224,0
@@ -1522,7 +1522,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18040,Treino_1520,industria,indicacao,85,15834.2,0.201,284,0.5197,0
 12343,Treino_1521,industria,outbound,85,22521.25,0.937,491,0.8193,0
 16490,Treino_1522,tecnologia,inbound,85,66589.97,0.129,95,0.0401,0
-16316,Treino_1523,varejo,inbound,85,9068.22,0.947,109,0.2162,1
+16316,Treino_1523,varejo,inbound,85,9068.22,0.947,109,0.2162,0
 18946,Treino_1524,tecnologia,inbound,85,63276.7,0.426,358,0.3256,0
 17720,Treino_1525,saude,outbound,85,33038.47,0.474,350,0.1712,0
 13120,Treino_1526,tecnologia,inbound,85,44703.27,0.945,330,0.3254,0
@@ -1574,7 +1574,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 15221,Treino_1572,varejo,outbound,87,11755.87,0.381,485,0.6762,0
 10907,Treino_1573,saude,outbound,88,83677.06,0.575,39,0.462,0
 15010,Treino_1574,saude,inbound,88,42978.68,0.243,59,0.2151,0
-16965,Treino_1575,servicos,indicacao,88,78837.39,0.425,468,0.4809,1
+16965,Treino_1575,servicos,indicacao,88,78837.39,0.425,468,0.4809,0
 13771,Treino_1576,saude,inbound,88,17365.96,0.375,204,0.2501,0
 18741,Treino_1577,industria,inbound,88,39510.56,0.808,65,0.4843,0
 13779,Treino_1578,saude,inbound,88,44717.31,0.503,428,0.2046,1
@@ -1790,7 +1790,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18346,Treino_1788,saude,inbound,100,53376.85,0.898,57,0.6188,0
 14779,Treino_1789,servicos,indicacao,100,37209.38,0.825,219,0.5391,0
 10839,Treino_1790,tecnologia,inbound,100,54410.52,0.734,319,0.8741,1
-19132,Treino_1791,saude,inbound,100,21290.68,0.691,499,0.8736,1
+19132,Treino_1791,saude,inbound,100,21290.68,0.691,499,0.8736,0
 18472,Treino_1792,servicos,inbound,100,65600.16,0.869,122,0.5418,0
 13956,Treino_1793,varejo,outbound,100,49651.71,0.78,137,0.4783,0
 14183,Treino_1794,servicos,outbound,100,18533.26,0.822,261,0.5282,0
@@ -1864,7 +1864,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 15117,Treino_1862,saude,inbound,104,82347.65,0.383,366,0.8227,0
 18244,Treino_1863,industria,outbound,104,99871.66,0.338,190,0.1672,0
 14153,Treino_1864,servicos,outbound,104,24601.36,0.828,196,0.4016,0
-15535,Treino_1865,varejo,indicacao,104,66014.26,0.615,229,0.7727,1
+15535,Treino_1865,varejo,indicacao,104,66014.26,0.615,229,0.7727,0
 12232,Treino_1866,saude,inbound,104,54621.61,0.144,25,0.2375,0
 13607,Treino_1867,varejo,inbound,104,56814.11,0.213,187,0.6728,0
 15492,Treino_1868,tecnologia,inbound,104,75374.74,0.367,46,0.3302,1
@@ -2096,7 +2096,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 14531,Treino_2094,tecnologia,inbound,117,26978.16,0.782,94,0.6613,0
 15515,Treino_2095,servicos,inbound,117,66087.51,0.369,229,0.3091,0
 12772,Treino_2096,saude,indicacao,117,78853.44,0.789,370,0.5531,0
-14392,Treino_2097,tecnologia,outbound,117,34121.77,0.343,456,0.3013,1
+14392,Treino_2097,tecnologia,outbound,117,34121.77,0.343,456,0.3013,0
 17062,Treino_2098,industria,outbound,117,73984.79,0.098,436,0.6069,0
 15508,Treino_2099,saude,outbound,117,96259.95,0.004,278,0.2954,0
 17613,Treino_2100,saude,indicacao,117,25049.72,0.366,450,0.4355,0
@@ -2134,7 +2134,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18115,Treino_2132,tecnologia,outbound,119,52883.05,0.104,143,0.1636,0
 19166,Treino_2133,servicos,inbound,119,40460.21,0.241,462,0.755,0
 15225,Treino_2134,saude,inbound,119,60775.3,0.732,316,0.303,0
-14821,Treino_2135,servicos,inbound,119,59333.53,0.566,65,0.4911,1
+14821,Treino_2135,servicos,inbound,119,59333.53,0.566,65,0.4911,0
 11614,Treino_2136,varejo,inbound,119,50956.57,0.19,146,0.2685,0
 16088,Treino_2137,varejo,outbound,119,88508.23,0.871,204,0.8625,0
 11349,Treino_2138,tecnologia,outbound,119,67574.67,0.733,252,0.6046,0
@@ -2283,7 +2283,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 19171,Treino_2281,varejo,inbound,127,44587.05,0.72,462,0.4379,0
 17870,Treino_2282,servicos,outbound,127,67212.82,0.513,268,0.5111,0
 19833,Treino_2283,varejo,inbound,128,70881.42,0.191,375,0.196,0
-14198,Treino_2284,tecnologia,inbound,128,45172.04,0.267,246,0.5616,1
+14198,Treino_2284,tecnologia,inbound,128,45172.04,0.267,246,0.5616,0
 10039,Treino_2285,saude,indicacao,128,64122.63,0.3,356,0.5799,0
 18903,Treino_2286,tecnologia,inbound,128,72465.21,0.43,303,0.8226,0
 16153,Treino_2287,varejo,inbound,128,69321.21,0.261,98,0.0737,0
@@ -2313,7 +2313,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 11147,Treino_2311,tecnologia,inbound,129,49909.04,0.046,30,0.01,0
 11143,Treino_2312,tecnologia,indicacao,129,44658.75,0.578,487,0.5454,0
 13744,Treino_2313,saude,inbound,129,43711.37,0.913,21,0.1199,0
-13333,Treino_2314,varejo,outbound,129,67247.6,0.091,314,0.5193,1
+13333,Treino_2314,varejo,outbound,129,67247.6,0.091,314,0.5193,0
 15319,Treino_2315,varejo,indicacao,130,45389.71,0.326,57,0.1734,0
 15787,Treino_2316,industria,indicacao,130,41733.53,0.572,352,0.0628,0
 15092,Treino_2317,varejo,inbound,130,44046.5,0.722,137,0.391,0
@@ -2410,7 +2410,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 15039,Treino_2408,tecnologia,inbound,135,73142.3,0.025,355,0.6142,0
 19733,Treino_2409,servicos,outbound,135,12009.59,0.013,197,0.01,0
 10103,Treino_2410,varejo,outbound,135,61245.1,0.526,109,0.2562,0
-17202,Treino_2411,varejo,inbound,135,71738.71,0.998,378,0.228,1
+17202,Treino_2411,varejo,inbound,135,71738.71,0.998,378,0.228,0
 15849,Treino_2412,servicos,outbound,135,68396.81,0.324,351,0.4759,0
 18831,Treino_2413,tecnologia,inbound,135,40313.62,0.447,302,0.4949,0
 17954,Treino_2414,servicos,outbound,135,65252.43,0.032,497,0.1374,0
@@ -2935,7 +2935,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 15765,Treino_2933,saude,inbound,164,59258.63,0.449,311,0.1177,0
 13032,Treino_2934,varejo,outbound,164,59281.25,0.154,98,0.5449,0
 14207,Treino_2935,varejo,inbound,164,62881.22,0.434,122,0.4004,0
-15983,Treino_2936,industria,outbound,164,47122.99,0.281,348,0.2861,1
+15983,Treino_2936,industria,outbound,164,47122.99,0.281,348,0.2861,0
 10923,Treino_2937,industria,inbound,164,53043.31,0.63,117,0.4406,0
 12374,Treino_2938,saude,inbound,164,63096.3,0.38,206,0.4994,0
 11040,Treino_2939,varejo,inbound,164,55776.56,0.656,379,0.5468,0
@@ -3068,7 +3068,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 11679,Treino_3066,servicos,outbound,170,32876.38,0.853,476,0.5422,0
 15000,Treino_3067,tecnologia,inbound,170,109147.08,0.042,366,0.6504,0
 11436,Treino_3068,varejo,inbound,170,44261.2,0.442,69,0.0458,0
-17339,Treino_3069,servicos,inbound,170,60000.34,0.782,73,0.3499,1
+17339,Treino_3069,servicos,inbound,170,60000.34,0.782,73,0.3499,0
 14522,Treino_3070,tecnologia,indicacao,170,84911.18,0.891,180,0.698,0
 14550,Treino_3071,varejo,indicacao,170,57241.29,0.618,496,0.7878,0
 11973,Treino_3072,tecnologia,inbound,171,57124.37,0.833,36,0.4502,0
@@ -3127,7 +3127,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 19061,Treino_3125,servicos,inbound,174,46867.31,0.705,414,0.6289,0
 14116,Treino_3126,servicos,outbound,174,33141.33,0.216,382,0.2718,0
 14053,Treino_3127,servicos,inbound,174,52036.86,0.514,77,0.3233,0
-15069,Treino_3128,saude,inbound,174,28815.87,0.797,159,0.2768,1
+15069,Treino_3128,saude,inbound,174,28815.87,0.797,159,0.2768,0
 18752,Treino_3129,servicos,inbound,174,64507.52,0.519,64,0.2829,0
 11485,Treino_3130,saude,inbound,174,43264.22,0.571,323,0.5542,0
 15995,Treino_3131,varejo,outbound,174,64044.13,0.319,293,0.4996,0
@@ -3151,7 +3151,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18956,Treino_3149,saude,indicacao,175,32090.4,0.301,392,0.2538,0
 14946,Treino_3150,varejo,inbound,175,45963.94,0.58,371,0.5128,0
 18878,Treino_3151,saude,indicacao,175,19966.37,0.903,400,0.4887,0
-18125,Treino_3152,industria,outbound,175,75001.37,0.569,409,0.7307,1
+18125,Treino_3152,industria,outbound,175,75001.37,0.569,409,0.7307,0
 11409,Treino_3153,industria,inbound,175,66511.32,0.416,35,0.2369,0
 19284,Treino_3154,tecnologia,inbound,175,35706.7,0.865,136,0.484,1
 12312,Treino_3155,saude,inbound,175,52172.55,0.652,130,0.3142,0
@@ -3467,7 +3467,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 11405,Treino_3465,tecnologia,inbound,193,78395.68,0.702,236,0.9888,0
 16954,Treino_3466,tecnologia,inbound,193,52340.05,0.801,289,0.7836,0
 10476,Treino_3467,saude,outbound,193,34594.31,0.563,352,0.6241,0
-19050,Treino_3468,industria,indicacao,193,77201.8,0.386,444,0.365,1
+19050,Treino_3468,industria,indicacao,193,77201.8,0.386,444,0.365,0
 19755,Treino_3469,industria,inbound,193,5000.0,0.067,143,0.0654,0
 11590,Treino_3470,industria,indicacao,193,63732.48,0.719,130,0.5536,0
 16868,Treino_3471,saude,inbound,193,58000.92,0.248,405,0.4501,0
@@ -3483,7 +3483,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 14481,Treino_3481,saude,inbound,194,96254.99,0.978,234,0.4768,0
 16934,Treino_3482,tecnologia,outbound,194,67814.3,0.131,102,0.01,0
 15269,Treino_3483,varejo,inbound,194,5000.0,0.752,286,0.578,0
-14090,Treino_3484,varejo,inbound,194,34603.18,0.133,103,0.0158,1
+14090,Treino_3484,varejo,inbound,194,34603.18,0.133,103,0.0158,0
 16816,Treino_3485,saude,inbound,194,65562.89,0.414,199,0.3824,0
 12861,Treino_3486,industria,inbound,194,54900.8,0.143,369,0.3061,0
 16042,Treino_3487,saude,inbound,194,62868.22,0.868,205,0.5849,0
@@ -3578,7 +3578,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 19018,Treino_3576,servicos,inbound,199,39119.21,0.704,37,0.4153,0
 18755,Treino_3577,servicos,inbound,199,78864.71,0.545,273,0.5186,0
 12901,Treino_3578,varejo,outbound,199,44673.47,0.943,78,0.5834,0
-16023,Treino_3579,industria,inbound,199,66176.73,0.44,23,0.4518,1
+16023,Treino_3579,industria,inbound,199,66176.73,0.44,23,0.4518,0
 12135,Treino_3580,industria,outbound,199,79299.4,0.804,394,0.5399,0
 14738,Treino_3581,saude,inbound,199,57410.29,0.796,224,0.3487,0
 11979,Treino_3582,servicos,indicacao,199,48361.49,0.4,440,0.6298,0
@@ -3740,7 +3740,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 17196,Treino_3738,saude,inbound,206,51844.92,0.913,31,0.7033,0
 15067,Treino_3739,tecnologia,inbound,206,36629.69,0.014,51,0.0601,0
 17627,Treino_3740,saude,inbound,206,45639.18,0.629,150,0.3725,0
-17200,Treino_3741,tecnologia,inbound,206,58874.14,0.927,366,0.8258,1
+17200,Treino_3741,tecnologia,inbound,206,58874.14,0.927,366,0.8258,0
 13929,Treino_3742,tecnologia,outbound,207,57363.12,0.899,298,0.4712,0
 14864,Treino_3743,saude,indicacao,207,22761.96,0.118,417,0.1573,0
 19489,Treino_3744,varejo,inbound,207,34057.11,0.745,308,0.4495,0
@@ -3800,7 +3800,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 19718,Treino_3798,varejo,inbound,209,54679.53,0.522,430,0.322,0
 10150,Treino_3799,servicos,inbound,209,78476.78,0.635,439,0.8648,0
 19146,Treino_3800,servicos,inbound,209,64355.13,0.008,440,0.249,0
-13056,Treino_3801,tecnologia,inbound,209,20634.96,0.595,59,0.4336,1
+13056,Treino_3801,tecnologia,inbound,209,20634.96,0.595,59,0.4336,0
 13601,Treino_3802,tecnologia,inbound,209,60342.32,0.562,106,0.563,1
 18312,Treino_3803,servicos,inbound,209,51448.48,0.553,326,0.01,0
 10139,Treino_3804,saude,inbound,209,76190.48,0.137,78,0.01,0
@@ -3852,7 +3852,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18414,Treino_3850,tecnologia,inbound,212,35513.35,0.65,457,0.5732,0
 16700,Treino_3851,varejo,inbound,212,41673.11,0.989,158,0.7147,0
 18584,Treino_3852,servicos,indicacao,213,54007.19,0.41,314,0.4171,0
-16442,Treino_3853,varejo,inbound,213,58845.44,0.873,492,0.5994,1
+16442,Treino_3853,varejo,inbound,213,58845.44,0.873,492,0.5994,0
 18074,Treino_3854,saude,inbound,213,62538.22,0.259,81,0.2209,0
 12126,Treino_3855,tecnologia,indicacao,213,48927.37,0.055,25,0.01,0
 11779,Treino_3856,saude,inbound,213,55610.17,0.15,399,0.4798,0
@@ -4093,7 +4093,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18776,Treino_4091,servicos,inbound,226,32761.14,0.52,143,0.0813,0
 17639,Treino_4092,servicos,outbound,226,49580.19,0.581,325,0.6156,0
 17799,Treino_4093,saude,inbound,226,78602.43,0.537,489,0.478,0
-17645,Treino_4094,saude,inbound,226,63342.26,0.706,208,0.7442,1
+17645,Treino_4094,saude,inbound,226,63342.26,0.706,208,0.7442,0
 19509,Treino_4095,saude,inbound,226,34331.47,0.772,210,0.4022,0
 16472,Treino_4096,saude,inbound,226,71536.84,0.923,210,0.99,0
 17312,Treino_4097,varejo,outbound,226,96567.5,0.265,26,0.4464,0
@@ -4288,7 +4288,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 11988,Treino_4286,tecnologia,outbound,236,26410.49,0.907,468,0.7012,0
 18258,Treino_4287,varejo,inbound,236,48383.14,0.458,94,0.3389,0
 16454,Treino_4288,servicos,inbound,236,44645.17,0.376,65,0.0357,0
-17125,Treino_4289,industria,outbound,236,13864.11,0.944,260,0.5638,1
+17125,Treino_4289,industria,outbound,236,13864.11,0.944,260,0.5638,0
 15044,Treino_4290,varejo,inbound,236,30367.76,0.563,386,0.5113,0
 12497,Treino_4291,industria,inbound,236,53822.46,0.227,499,0.2676,0
 15744,Treino_4292,servicos,outbound,236,83307.53,0.044,289,0.5259,0
@@ -4366,7 +4366,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 19404,Treino_4364,tecnologia,inbound,240,44640.68,0.877,134,0.4157,0
 15368,Treino_4365,servicos,outbound,240,38077.45,0.301,444,0.3911,0
 16612,Treino_4366,saude,outbound,240,32911.22,0.665,46,0.3048,0
-10324,Treino_4367,saude,inbound,240,61304.0,0.182,189,0.6939,1
+10324,Treino_4367,saude,inbound,240,61304.0,0.182,189,0.6939,0
 15698,Treino_4368,servicos,inbound,240,37952.75,0.427,380,0.3299,0
 17445,Treino_4369,saude,inbound,240,70652.28,0.583,416,0.725,0
 14668,Treino_4370,saude,inbound,240,65868.99,0.877,366,0.5342,1
@@ -4401,7 +4401,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 10879,Treino_4399,industria,inbound,242,45597.61,0.798,290,0.5614,0
 11740,Treino_4400,tecnologia,outbound,242,37980.52,0.413,80,0.4039,0
 16514,Treino_4401,servicos,outbound,242,49463.38,0.242,331,0.2988,0
-15562,Treino_4402,tecnologia,indicacao,242,24358.73,0.649,424,0.6098,1
+15562,Treino_4402,tecnologia,indicacao,242,24358.73,0.649,424,0.6098,0
 17210,Treino_4403,saude,outbound,242,53249.45,0.817,68,0.3724,0
 11983,Treino_4404,servicos,inbound,242,63965.87,0.742,293,0.3869,0
 17816,Treino_4405,tecnologia,inbound,242,43518.41,0.371,476,0.4238,0
@@ -5250,7 +5250,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 16923,Treino_5248,industria,outbound,288,52503.16,0.161,348,0.5923,0
 12324,Treino_5249,industria,inbound,288,52865.91,0.876,306,0.5919,0
 13253,Treino_5250,servicos,outbound,288,74654.23,0.507,146,0.2567,0
-18783,Treino_5251,servicos,inbound,288,59822.52,0.679,294,0.8164,1
+18783,Treino_5251,servicos,inbound,288,59822.52,0.679,294,0.8164,0
 19161,Treino_5252,varejo,indicacao,288,12078.93,0.506,204,0.1943,0
 18468,Treino_5253,varejo,outbound,288,60012.38,0.073,479,0.5377,0
 13985,Treino_5254,tecnologia,outbound,288,44285.51,0.471,316,0.7715,0
@@ -5633,7 +5633,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 10888,Treino_5631,saude,inbound,307,79901.3,0.447,208,0.4511,0
 17283,Treino_5632,saude,outbound,307,62930.53,0.154,429,0.4207,0
 15589,Treino_5633,varejo,inbound,307,48197.15,0.408,316,0.3598,0
-10830,Treino_5634,servicos,indicacao,307,56993.21,0.028,179,0.3985,1
+10830,Treino_5634,servicos,indicacao,307,56993.21,0.028,179,0.3985,0
 17668,Treino_5635,servicos,outbound,307,44742.65,0.255,311,0.157,0
 17468,Treino_5636,tecnologia,outbound,308,29200.77,0.602,21,0.171,0
 18937,Treino_5637,servicos,outbound,308,42489.83,0.442,199,0.01,0
@@ -5855,7 +5855,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 14377,Treino_5853,varejo,outbound,320,51518.43,0.74,25,0.3851,0
 13317,Treino_5854,saude,outbound,321,52744.75,0.597,179,0.5243,0
 10571,Treino_5855,tecnologia,inbound,321,67359.55,0.776,456,0.3033,0
-14159,Treino_5856,tecnologia,outbound,321,58516.62,0.531,337,0.5587,1
+14159,Treino_5856,tecnologia,outbound,321,58516.62,0.531,337,0.5587,0
 17592,Treino_5857,servicos,inbound,321,53426.83,0.237,429,0.1956,0
 10789,Treino_5858,saude,indicacao,321,41502.54,0.874,394,0.8302,0
 19506,Treino_5859,tecnologia,inbound,321,101472.32,0.57,433,0.4902,0
@@ -6278,7 +6278,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18374,Treino_6276,industria,outbound,344,20429.13,0.607,388,0.5131,0
 10709,Treino_6277,industria,inbound,344,59055.21,0.069,29,0.1861,0
 17777,Treino_6278,servicos,inbound,344,32166.5,0.665,468,0.9607,0
-13039,Treino_6279,varejo,inbound,344,23898.42,0.639,469,0.5803,1
+13039,Treino_6279,varejo,inbound,344,23898.42,0.639,469,0.5803,0
 16750,Treino_6280,varejo,inbound,344,72113.85,0.971,443,0.99,1
 11087,Treino_6281,tecnologia,inbound,344,45261.86,0.019,340,0.6118,0
 13367,Treino_6282,industria,inbound,344,32253.23,0.784,250,0.5297,0
@@ -6339,7 +6339,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 16159,Treino_6337,industria,inbound,348,109367.21,0.601,261,0.437,0
 16647,Treino_6338,servicos,inbound,348,51045.38,0.266,54,0.2263,0
 16360,Treino_6339,tecnologia,outbound,348,53430.61,0.596,166,0.7342,0
-14523,Treino_6340,saude,inbound,348,68129.47,0.604,313,0.8517,1
+14523,Treino_6340,saude,inbound,348,68129.47,0.604,313,0.8517,0
 15085,Treino_6341,servicos,inbound,348,57132.11,0.955,453,0.894,0
 11370,Treino_6342,industria,inbound,348,63105.46,0.181,420,0.3497,0
 16081,Treino_6343,saude,outbound,348,46542.22,0.266,324,0.761,0
@@ -6508,7 +6508,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 12664,Treino_6506,servicos,indicacao,357,51908.28,0.009,493,0.3582,0
 18169,Treino_6507,varejo,indicacao,357,51751.53,0.312,32,0.0679,0
 17614,Treino_6508,servicos,outbound,357,54404.36,0.038,41,0.2617,0
-13862,Treino_6509,tecnologia,inbound,357,91037.15,0.357,322,0.7852,1
+13862,Treino_6509,tecnologia,inbound,357,91037.15,0.357,322,0.7852,0
 14095,Treino_6510,saude,indicacao,357,53173.07,0.567,154,0.3565,0
 14625,Treino_6511,varejo,inbound,358,14673.48,0.153,225,0.4482,0
 14394,Treino_6512,servicos,indicacao,358,93699.15,0.059,372,0.2513,0
@@ -6536,7 +6536,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 14052,Treino_6534,servicos,inbound,359,37065.2,0.362,263,0.2553,0
 16548,Treino_6535,servicos,inbound,359,46385.07,0.723,353,0.4569,0
 12698,Treino_6536,saude,inbound,359,81898.52,0.029,178,0.4311,0
-12606,Treino_6537,varejo,inbound,359,57755.19,0.086,265,0.3866,1
+12606,Treino_6537,varejo,inbound,359,57755.19,0.086,265,0.3866,0
 18245,Treino_6538,servicos,inbound,359,13230.33,0.44,83,0.3986,0
 14433,Treino_6539,saude,indicacao,359,37745.83,0.952,193,0.7422,0
 10393,Treino_6540,industria,indicacao,359,79519.77,0.989,17,0.5228,1
@@ -6610,7 +6610,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 17195,Treino_6608,saude,inbound,363,27697.78,0.387,410,0.4602,0
 13673,Treino_6609,industria,outbound,363,17640.94,0.807,492,0.4124,0
 16257,Treino_6610,industria,outbound,363,30976.97,0.711,395,0.584,0
-12914,Treino_6611,servicos,outbound,363,67815.98,0.724,264,0.9184,1
+12914,Treino_6611,servicos,outbound,363,67815.98,0.724,264,0.9184,0
 11117,Treino_6612,varejo,outbound,363,42204.44,0.987,190,0.4272,0
 19428,Treino_6613,tecnologia,indicacao,363,61258.6,0.599,393,0.3236,0
 13432,Treino_6614,industria,indicacao,363,44439.79,0.327,71,0.1699,0
@@ -6639,7 +6639,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 13052,Treino_6637,saude,inbound,364,35526.82,0.474,316,0.1578,0
 11209,Treino_6638,industria,indicacao,364,33992.47,0.939,431,0.6596,0
 19372,Treino_6639,industria,outbound,364,68604.88,0.479,387,0.5523,0
-11919,Treino_6640,saude,outbound,365,54252.9,0.885,191,0.3115,1
+11919,Treino_6640,saude,outbound,365,54252.9,0.885,191,0.3115,0
 14227,Treino_6641,servicos,outbound,365,47463.23,0.723,261,0.377,0
 12059,Treino_6642,industria,outbound,365,78356.22,0.449,212,0.8654,0
 13227,Treino_6643,servicos,outbound,365,62367.46,0.652,146,0.631,0
@@ -6941,7 +6941,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 17322,Treino_6939,servicos,inbound,380,54272.86,0.476,171,0.2066,0
 19114,Treino_6940,tecnologia,inbound,380,26945.7,0.704,335,0.2528,0
 11198,Treino_6941,saude,outbound,380,64353.52,0.573,354,0.99,0
-17739,Treino_6942,servicos,outbound,381,72642.48,0.945,384,0.6933,1
+17739,Treino_6942,servicos,outbound,381,72642.48,0.945,384,0.6933,0
 10916,Treino_6943,servicos,outbound,381,40902.82,0.458,476,0.8525,0
 10912,Treino_6944,tecnologia,inbound,381,54061.13,0.362,289,0.5933,0
 11208,Treino_6945,saude,outbound,381,19181.64,0.713,446,0.2709,0
@@ -8107,11 +8107,11 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 16461,Treino_8105,industria,inbound,441,74423.38,0.739,192,0.4866,0
 15942,Treino_8106,servicos,inbound,441,25201.92,0.373,280,0.3691,0
 13374,Treino_8107,tecnologia,outbound,441,57243.17,0.599,176,0.3435,0
-17564,Treino_8108,industria,inbound,441,76118.41,0.951,469,0.8736,1
+17564,Treino_8108,industria,inbound,441,76118.41,0.951,469,0.8736,0
 15461,Treino_8109,tecnologia,inbound,441,92721.23,0.816,105,0.9456,1
 17983,Treino_8110,industria,inbound,441,54347.05,0.967,77,0.5582,0
 11036,Treino_8111,servicos,inbound,441,64465.68,0.512,391,0.7198,0
-10537,Treino_8112,tecnologia,inbound,441,86000.06,0.567,268,0.5319,1
+10537,Treino_8112,tecnologia,inbound,441,86000.06,0.567,268,0.5319,0
 18886,Treino_8113,industria,inbound,441,54247.33,0.568,366,0.5036,0
 10533,Treino_8114,tecnologia,inbound,441,53637.08,0.815,470,0.5559,0
 14026,Treino_8115,industria,outbound,441,22013.27,0.917,464,0.5344,0
@@ -8234,7 +8234,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 17342,Treino_8232,tecnologia,inbound,447,29883.85,0.496,146,0.249,0
 12041,Treino_8233,varejo,inbound,447,109008.45,0.421,395,0.7865,1
 12547,Treino_8234,industria,inbound,447,25953.26,0.148,30,0.01,0
-18974,Treino_8235,industria,outbound,447,84934.94,0.189,104,0.4123,1
+18974,Treino_8235,industria,outbound,447,84934.94,0.189,104,0.4123,0
 17622,Treino_8236,tecnologia,outbound,447,37787.88,0.707,490,0.7209,0
 17769,Treino_8237,tecnologia,inbound,447,31789.98,0.566,83,0.2404,0
 15965,Treino_8238,tecnologia,outbound,448,25573.8,0.839,323,0.6667,0
@@ -8433,7 +8433,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 10899,Treino_8431,tecnologia,inbound,458,31752.21,0.184,474,0.7387,0
 13522,Treino_8432,industria,inbound,458,54585.37,0.073,358,0.4574,0
 10251,Treino_8433,tecnologia,outbound,458,17954.0,0.845,315,0.4245,0
-18038,Treino_8434,industria,outbound,458,47817.76,0.471,434,0.6824,1
+18038,Treino_8434,industria,outbound,458,47817.76,0.471,434,0.6824,0
 19841,Treino_8435,varejo,outbound,458,28100.28,0.884,154,0.0417,0
 19842,Treino_8436,tecnologia,inbound,458,117818.82,0.895,94,0.99,1
 15246,Treino_8437,servicos,indicacao,458,25775.23,0.089,152,0.0915,0
@@ -8479,7 +8479,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 11892,Treino_8477,tecnologia,outbound,460,33387.11,0.462,294,0.3647,0
 14918,Treino_8478,servicos,inbound,460,50289.84,0.905,187,0.6576,0
 12273,Treino_8479,servicos,outbound,460,41785.3,0.857,136,0.2897,0
-13765,Treino_8480,servicos,inbound,460,49706.56,0.089,171,0.3269,1
+13765,Treino_8480,servicos,inbound,460,49706.56,0.089,171,0.3269,0
 16560,Treino_8481,tecnologia,indicacao,460,55832.22,0.636,203,0.4013,1
 15954,Treino_8482,servicos,inbound,461,52877.05,0.134,256,0.4617,0
 10341,Treino_8483,tecnologia,inbound,461,47840.14,0.721,383,0.5924,0
@@ -8692,7 +8692,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18563,Treino_8690,varejo,outbound,472,66304.22,0.667,481,0.9489,0
 10577,Treino_8691,varejo,inbound,472,68850.41,0.685,435,0.7404,0
 18972,Treino_8692,varejo,outbound,472,41354.37,0.793,190,0.4923,0
-18393,Treino_8693,varejo,inbound,472,46900.97,0.695,422,0.8137,1
+18393,Treino_8693,varejo,inbound,472,46900.97,0.695,422,0.8137,0
 10932,Treino_8694,industria,outbound,472,67828.91,0.221,69,0.2516,0
 17077,Treino_8695,tecnologia,inbound,472,43062.03,0.685,171,0.28,0
 19278,Treino_8696,industria,inbound,472,15722.59,0.171,7,0.0458,0
@@ -8719,7 +8719,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 17526,Treino_8717,industria,inbound,473,12901.32,0.665,156,0.3319,0
 19731,Treino_8718,industria,inbound,473,35549.7,0.695,483,0.8348,0
 10987,Treino_8719,varejo,indicacao,473,72119.73,0.299,343,0.4148,0
-12523,Treino_8720,industria,outbound,473,89694.34,0.879,15,0.6403,1
+12523,Treino_8720,industria,outbound,473,89694.34,0.879,15,0.6403,0
 14468,Treino_8721,saude,indicacao,473,23494.84,0.803,39,0.3762,0
 14570,Treino_8722,varejo,inbound,473,32372.83,0.325,435,0.5995,0
 11828,Treino_8723,servicos,inbound,473,50155.15,0.89,244,0.871,0
@@ -8903,7 +8903,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 12765,Treino_8901,servicos,outbound,482,7791.44,0.874,109,0.1221,0
 11219,Treino_8902,tecnologia,indicacao,482,32702.48,0.168,117,0.3241,0
 18305,Treino_8903,servicos,outbound,482,68975.99,0.009,248,0.2727,0
-18771,Treino_8904,servicos,outbound,483,85284.75,0.771,320,0.7915,1
+18771,Treino_8904,servicos,outbound,483,85284.75,0.771,320,0.7915,0
 12376,Treino_8905,tecnologia,outbound,483,73705.52,0.477,351,0.7378,0
 18668,Treino_8906,industria,outbound,483,5000.0,0.22,33,0.0595,0
 19561,Treino_8907,servicos,outbound,483,50045.15,0.401,495,0.5897,0
@@ -8923,7 +8923,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 13165,Treino_8921,industria,indicacao,484,26750.07,0.459,457,0.5764,0
 14989,Treino_8922,servicos,inbound,484,60138.95,0.194,174,0.3758,0
 10194,Treino_8923,varejo,inbound,484,58917.25,0.94,368,0.7037,0
-11321,Treino_8924,industria,inbound,484,90129.39,0.418,124,0.4085,1
+11321,Treino_8924,industria,inbound,484,90129.39,0.418,124,0.4085,0
 19518,Treino_8925,saude,inbound,484,68599.33,0.481,314,0.451,0
 17424,Treino_8926,tecnologia,indicacao,484,48304.39,0.721,471,0.7159,0
 17544,Treino_8927,saude,outbound,484,5000.0,0.87,272,0.5917,0
@@ -8992,7 +8992,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 12357,Treino_8990,varejo,outbound,488,61960.57,0.705,447,0.9021,0
 19403,Treino_8991,servicos,outbound,488,52177.21,0.635,72,0.2488,0
 17093,Treino_8992,servicos,inbound,488,16599.99,0.022,338,0.01,0
-12375,Treino_8993,servicos,inbound,488,31077.89,0.316,389,0.4019,1
+12375,Treino_8993,servicos,inbound,488,31077.89,0.316,389,0.4019,0
 11901,Treino_8994,industria,inbound,488,29209.08,0.724,212,0.4116,0
 11884,Treino_8995,industria,indicacao,488,31541.68,0.071,346,0.0154,0
 16898,Treino_8996,saude,inbound,488,77886.98,0.081,409,0.4739,0
@@ -9106,7 +9106,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 17411,Treino_9104,industria,inbound,494,47672.64,0.18,92,0.2314,0
 19335,Treino_9105,servicos,indicacao,494,55614.61,0.82,61,0.5719,0
 18933,Treino_9106,tecnologia,outbound,494,49744.54,0.777,186,0.1863,0
-16515,Treino_9107,tecnologia,inbound,494,19611.89,0.762,124,0.01,1
+16515,Treino_9107,tecnologia,inbound,494,19611.89,0.762,124,0.01,0
 15247,Treino_9108,servicos,inbound,494,27145.91,0.819,148,0.2799,0
 14477,Treino_9109,varejo,outbound,494,55686.48,0.354,221,0.6321,0
 10845,Treino_9110,servicos,outbound,494,53296.69,0.834,115,0.6105,0
@@ -9287,7 +9287,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 15088,Treino_9285,industria,outbound,503,54629.92,0.571,331,0.6696,0
 17035,Treino_9286,varejo,inbound,503,31402.76,0.333,267,0.3218,0
 17074,Treino_9287,servicos,outbound,503,48592.61,0.478,137,0.3898,0
-12110,Treino_9288,saude,inbound,503,64088.34,0.505,429,0.8171,1
+12110,Treino_9288,saude,inbound,503,64088.34,0.505,429,0.8171,0
 19455,Treino_9289,saude,outbound,503,67166.48,0.015,323,0.1958,0
 18590,Treino_9290,varejo,inbound,503,12762.31,0.478,147,0.2475,0
 13110,Treino_9291,saude,indicacao,503,54520.11,0.626,322,0.7958,0
@@ -9486,7 +9486,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 16182,Treino_9484,varejo,outbound,513,45970.85,0.672,410,0.552,0
 17104,Treino_9485,varejo,inbound,514,28456.61,0.339,414,0.1175,0
 14527,Treino_9486,servicos,inbound,514,46939.44,0.223,5,0.3144,0
-11999,Treino_9487,industria,inbound,514,49243.31,0.823,241,0.6686,1
+11999,Treino_9487,industria,inbound,514,49243.31,0.823,241,0.6686,0
 12924,Treino_9488,saude,inbound,514,64546.31,0.495,417,0.6559,0
 17171,Treino_9489,varejo,inbound,514,36017.71,0.141,361,0.4968,0
 11225,Treino_9490,varejo,outbound,514,54650.42,0.66,471,0.1112,0
@@ -9802,7 +9802,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18049,Treino_9800,industria,inbound,529,50145.04,0.486,312,0.5658,0
 14309,Treino_9801,tecnologia,outbound,529,70239.54,0.507,134,0.4018,0
 19454,Treino_9802,industria,inbound,529,68427.96,0.677,66,0.3728,0
-17090,Treino_9803,servicos,inbound,529,30775.84,0.931,390,0.6958,1
+17090,Treino_9803,servicos,inbound,529,30775.84,0.931,390,0.6958,0
 17955,Treino_9804,saude,indicacao,529,37204.0,0.795,56,0.4613,0
 19619,Treino_9805,tecnologia,outbound,530,75968.04,0.138,104,0.6264,0
 16694,Treino_9806,servicos,outbound,530,51205.85,0.7,148,0.4231,0
@@ -9864,7 +9864,7 @@ lead_id,empresa,setor,canal_origem,dia_chegada,orcamento_declarado,urgencia_decl
 18801,Treino_9862,varejo,inbound,532,46098.36,0.476,250,0.3207,0
 15384,Treino_9863,servicos,inbound,533,49735.85,0.181,345,0.903,0
 13368,Treino_9864,servicos,outbound,533,40843.88,0.441,342,0.2311,0
-14209,Treino_9865,saude,inbound,533,56769.48,0.43,445,0.6717,1
+14209,Treino_9865,saude,inbound,533,56769.48,0.43,445,0.6717,0
 19174,Treino_9866,industria,indicacao,533,75949.3,0.978,170,0.6747,0
 18603,Treino_9867,varejo,inbound,533,45251.02,0.844,376,0.99,0
 19139,Treino_9868,tecnologia,inbound,533,47937.98,0.878,128,0.4854,0

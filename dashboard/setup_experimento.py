@@ -10,8 +10,8 @@ Aba de configuracao e laboratório do experimento. Mostra:
   4. Limpeza — botoes individuais com confirmacao antes de agir
 
 Esta aba usa arquivos SEPARADOS do modo ao vivo:
-  - historico_estado_a_treino.jsonl  (gerado aqui, em lote, para treino)
-  - historico_estado_a.jsonl          (gerado na aba ao vivo, visual)
+  - historico_estado_a.jsonl  (gerado pelo rodar_estado_a.py, em lote, ou
+    pela aba ao vivo -- mesmo arquivo, mesmo conteudo)
 Isso garante que uma demo ao vivo nao sobrescreva o material de treino.
 """
 
@@ -33,7 +33,7 @@ PASTA_MODELOS = "../modelos"
 PASTA_SAIDAS = "../saidas"
 
 CAMINHO_LEADS = os.path.join(PASTA_DADOS, "leads_base.csv")
-CAMINHO_HIST_TREINO = os.path.join(PASTA_SAIDAS, "historico_estado_a_treino.jsonl")
+CAMINHO_HIST_TREINO = os.path.join(PASTA_SAIDAS, "historico_estado_a.jsonl")
 CAMINHO_HIST_CONSOLID = os.path.join(PASTA_SAIDAS, "historico_estado_a_consolidado.csv")
 CAMINHO_MODELO_SCORE = os.path.join(PASTA_MODELOS, "modelo_score.pkl")
 CAMINHO_MODELO_MATCH = os.path.join(PASTA_MODELOS, "modelo_match.pkl")
@@ -709,39 +709,44 @@ visíveis, usando os padrões do histórico de fechamentos do Estado A.
                 idx_mais_proximo = np.argmin(dist_media)
                 lead_exemplo = leads.iloc[idx_mais_proximo]
                 vizinhos_ids = indices[idx_mais_proximo]
-                ganhos_ids = set(consolid[consolid["fechou_negocio"] == 1]["lead_id"])
-                vizinhos_df = leads[leads.index.isin(vizinhos_ids)][
-                    ["empresa", "orcamento_declarado", "urgencia_declarada"]
-                ].copy()
-                # isin retorna array numpy, nao pd.Series -- converter antes de .map()
-                isin_result = pd.Series(
-                    leads.index.isin(vizinhos_ids),
-                    index=leads.index
-                )
-                vizinhos_df["é deal ganho?"] = isin_result[vizinhos_df.index].map(
-                    {True: "✅", False: "❌"}
-                )
 
                 st.markdown("**Exemplo concreto de como o kNN funciona:**")
                 st.markdown(
                     f"Lead **{lead_exemplo['empresa']}** "
                     f"(orçamento R$ {lead_exemplo['orcamento_declarado']:,.0f}, "
                     f"urgência {lead_exemplo['urgencia_declarada']:.3f}) "
-                    f"tem distância de **{dist_media[idx_mais_proximo]:,.0f}** "
-                    "ao seu vizinho mais próximo nos deals ganhos."
+                    f"tem distância média de **{dist_media[idx_mais_proximo]:.3f}** "
+                    "aos seus cinco vizinhos mais próximos entre os deals ganhos."
                 )
                 st.markdown("Os 5 vizinhos mais próximos (deals ganhos de referência):")
-                ganhos_leads = leads[leads["lead_id"].isin(ganhos_ids)]
-                vizinhos_ganhos = ganhos_leads.iloc[vizinhos_ids][
-                    ["empresa", "setor", "orcamento_declarado", "urgencia_declarada"]
-                ]
-                st.dataframe(
-                    vizinhos_ganhos.style.format({
-                        "orcamento_declarado": "R$ {:,.0f}",
-                        "urgencia_declarada": "{:.3f}",
-                    }),
-                    use_container_width=True, hide_index=True,
-                )
+
+                # O conjunto de referencia do kNN sao os deals ganhos do HISTORICO
+                # DE TREINO (base de 10.000 leads), na ordem em que
+                # treinar_modelos.treinar_modelo_match os ajustou -- e nao os ganhos
+                # da base de comparacao. Os indices devolvidos por kneighbors() sao
+                # posicoes NESSE conjunto: indexa-los em qualquer outra populacao
+                # estourava com IndexError (as duas tem tamanhos diferentes).
+                caminho_ref = os.path.join(PASTA_SAIDAS, "historico_treino_para_modelos.csv")
+                if not _arquivo_existe(caminho_ref):
+                    st.info(
+                        "Histórico de treino não encontrado — rode a Etapa 3 para "
+                        "ver os vizinhos de referência."
+                    )
+                else:
+                    referencia_knn = pd.read_csv(caminho_ref)
+                    referencia_knn = referencia_knn[
+                        referencia_knn["fechou_negocio"] == 1
+                    ].reset_index(drop=True)
+                    vizinhos_ganhos = referencia_knn.iloc[vizinhos_ids][
+                        ["empresa", "setor", "orcamento_declarado", "urgencia_declarada"]
+                    ]
+                    st.dataframe(
+                        vizinhos_ganhos.style.format({
+                            "orcamento_declarado": "R$ {:,.0f}",
+                            "urgencia_declarada": "{:.3f}",
+                        }),
+                        use_container_width=True, hide_index=True,
+                    )
                 st.caption(
                     "O Closer alocado para o novo lead será aquele que "
                     "melhor performa com este perfil de cliente, com base "

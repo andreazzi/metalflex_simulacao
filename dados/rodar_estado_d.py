@@ -31,6 +31,16 @@ CAMINHO_JSONL = "../saidas/historico_estado_d.jsonl"
 CAMINHO_MODELO_SCORE = "../modelos/modelo_score.pkl"
 CAMINHO_THRESHOLD = "../modelos/threshold_score.pkl"
 
+# Repeticao usada para semear esta execucao avulsa, igual a de
+# rodar_estado_a.py: a semente de cada etapa vem da tripla
+# (repeticao, lead, etapa) -- ver pipeline._seed_pareada. Com repeticao=1 os
+# quatro scripts reproduzem a REPLICA 1 da rodada oficial, o que preserva as
+# duas identidades exatas do desenho (A == B e C == D) tambem fora do
+# experimento pareado. Sem o parametro, cada execucao caia no estado global
+# do modulo random e as identidades se quebravam no painel.
+REPETICAO_REFERENCIA = 1
+
+
 if __name__ == "__main__":
     leads_df = pd.read_csv(CAMINHO_LEADS)
 
@@ -46,7 +56,9 @@ if __name__ == "__main__":
     print(f"Rodando Estado D sobre {len(leads_df)} leads...")
     print("(usa APENAS RandomForest na qualificacao -- sem kNN, sem LLM, 7 etapas)\n")
 
-    resumo = executar_estado(ESTADO_D, leads_df, CAMINHO_JSONL, contexto_extra=contexto_extra)
+    resumo = executar_estado(ESTADO_D, leads_df, CAMINHO_JSONL,
+                             contexto_extra=contexto_extra,
+                             repeticao=REPETICAO_REFERENCIA)
 
     print("\n=== Resumo Estado D ===")
     print(f"Total de leads processados: {resumo['total_leads']}")

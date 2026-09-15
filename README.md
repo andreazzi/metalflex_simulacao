@@ -68,6 +68,8 @@ gerar_base_treino.py                 seed=142 -> base de treino (10.000, disjunt
 rodar_estado_a_para_treino_modelos.py         -> histórico rotulado
 treinar_modelos.py                            -> RandomForest + kNN + limiar
 experimento_30x.py --n-repeticoes 100         -> as 400 execuções
+rodar_estado_{a,b,c,d}.py                     -> histórico por estado (painel)
+gerar_figuras.py                              -> as sete figuras de dados
 ```
 
 Rodadas anteriores são arquivadas em `saidas/_arquivo_<timestamp>/`, não apagadas.

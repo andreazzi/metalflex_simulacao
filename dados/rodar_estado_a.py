@@ -18,9 +18,11 @@ from estados import ESTADO_A
 from pipeline import executar_estado
 
 CAMINHO_LEADS = "leads_base.csv"
-# arquivo separado do historico ao vivo (historico_estado_a.jsonl) para
-# que rodar o Estado A pelo setup nao sobrescreva uma demo em andamento.
-CAMINHO_JSONL = "../saidas/historico_estado_a_treino.jsonl"
+# Mesmo nome adotado por rodar_estado_b/c/d.py, que o dashboard procura em
+# ARQUIVOS["A"]. Ate aqui este script gravava com sufixo "_treino" -- unico
+# dos quatro a fazer isso --, e por isso o Estado A nunca aparecia nas visoes
+# por estado do painel, mesmo apos rodar o script.
+CAMINHO_JSONL = "../saidas/historico_estado_a.jsonl"
 CAMINHO_CONSOLIDADO = "../saidas/historico_estado_a_consolidado.csv"
 
 
@@ -38,11 +40,27 @@ def consolidar_por_lead(caminho_jsonl: str, leads_df: pd.DataFrame) -> pd.DataFr
     return leads_df
 
 
+# Repeticao usada para semear esta execucao avulsa. O experimento oficial
+# (experimento_30x.py) numera suas replicas de 1 a N e deriva a semente de
+# cada etapa da tripla (repeticao, lead, etapa) -- ver pipeline._seed_pareada.
+# Ao adotar aqui repeticao=1, esta passada reproduz exatamente a REPLICA 1 da
+# rodada oficial, e seu resultado pode ser conferido contra a linha
+# repeticao=1 de saidas/experimento_100x_replicas.csv.
+#
+# Antes desta correcao a chamada omitia o parametro, caindo no estado global
+# do modulo random: cada execucao produzia um historico diferente, e com ele
+# graficos do painel irreprodutiveis. Mesmo defeito ja corrigido em
+# rodar_estado_a_para_treino_modelos.py, que usa repeticao=SEED_TREINO.
+REPETICAO_REFERENCIA = 1
+
+
 if __name__ == "__main__":
     leads_df = pd.read_csv(CAMINHO_LEADS)
-    print(f"Rodando Estado A sobre {len(leads_df)} leads...")
+    print(f"Rodando Estado A sobre {len(leads_df)} leads "
+          f"(semente da replica {REPETICAO_REFERENCIA})...")
 
-    resumo = executar_estado(ESTADO_A, leads_df, CAMINHO_JSONL)
+    resumo = executar_estado(ESTADO_A, leads_df, CAMINHO_JSONL,
+                             repeticao=REPETICAO_REFERENCIA)
 
     print("\n=== Resumo Estado A ===")
     print(f"Total de leads processados: {resumo['total_leads']}")

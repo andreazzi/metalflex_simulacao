@@ -56,7 +56,7 @@ TEMPERATURE_LLM = 0
 
 #: Número de leads em cada base
 N_LEADS = 2000
-N_LEADS_TREINO = 2000
+N_LEADS_TREINO = 10000
 
 #: Número de réplicas da rodada oficial (experimento_30x.py --n-repeticoes)
 N_REPLICAS_OFICIAL = 100
@@ -66,7 +66,7 @@ N_REPLICAS_OFICIAL = 100
 #: hash diferente, a reprodutibilidade da geração foi quebrada.
 MD5_ESPERADO = {
     "leads_base.csv": "c289175b43b056927abe2c3e87d41259",
-    "leads_treino.csv": "049d7cb18beb6e758579606278d0a80c",
+    "leads_treino.csv": "706895de120842afd9654b9b8ccf3f4a",
 }
 
 #: Etapas que consomem sorteios aleatórios, por estado (estados.py).

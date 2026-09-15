@@ -214,7 +214,12 @@ def renderizar_analise():
         "aqui é exatamente o mesmo que qualifica leads no Estado D — a única diferença é "
         "que o kNN de match (analisado mais abaixo) não é usado por ele."
     )
-    st.markdown("### Análise sobre a base de treino (Estado A — 2.000 leads)")
+    st.markdown("### Análise sobre a base de comparação (Estado A — 2.000 leads)")
+    st.caption(
+        "Os modelos foram treinados sobre a base de treino (10.000 leads, seed 142), "
+        "disjunta desta. Os gráficos abaixo aplicam esses modelos à base de "
+        "comparação (2.000 leads, seed 42), que é onde o experimento roda."
+    )
 
     # ============================================================
     # BLOCO 1 — RandomForest: como o modelo toma a decisão (árvore)
@@ -335,10 +340,17 @@ def renderizar_analise():
 
     mcol1, mcol2, mcol3 = st.columns(3)
     with mcol1:
-        st.metric("AUC-ROC (validação)", f"{auc_aproximado:.3f}" if auc_aproximado else "—")
+        st.metric(
+            "AUC-ROC (base de comparação)",
+            f"{auc_aproximado:.3f}" if auc_aproximado else "—",
+        )
         st.caption(
             "Capacidade do modelo de separar quem vai fechar de quem não vai. "
-            "0,5 = acaso (cara ou coroa). 1,0 = perfeito. Acima de 0,7 é considerado bom."
+            "0,5 = acaso (cara ou coroa). 1,0 = perfeito. Acima de 0,7 é considerado bom. "
+            "Medido aqui sobre os 2.000 leads da base de comparação — leads que o modelo "
+            "nunca viu. A Tabela 8 da monografia reporta 0,762, medido sobre os 20% de "
+            "teste retidos da base de treino; as duas medidas são diferentes por "
+            "construção, e a proximidade entre elas indica que o modelo generaliza."
         )
     with mcol2:
         st.metric("Correlação com fit real oculto", f"{corr_fit_real:.3f}")
@@ -389,13 +401,17 @@ def renderizar_analise():
             height=340,
         )
         st.plotly_chart(fig_box, use_container_width=True)
-        razao = nao_fechou_d.mean() / fechou_d.mean() if fechou_d.mean() > 0 else 0
+        # Razao de separacao COM a padronizacao que o modelo de fato aplica
+        # (ia.match_closer_ia chama scaler.transform antes de consultar o kNN).
+        razao_padronizada = (
+            nao_fechou_d.mean() / fechou_d.mean() if fechou_d.mean() > 0 else 0
+        )
         st.caption(
             f"**Como ler:** cada caixa mostra a distribuição de distâncias para aquele grupo. "
             f"A linha central é a mediana; a caixa cobre os 50% centrais dos dados; os traços (whiskers) "
             f"cobrem o restante (excluindo outliers). "
             f"A caixa verde (fechou) sistematicamente mais baixa que a cinza (não fechou) confirma que "
-            f"leads que fecharam estão, em média, {razao:.1f}× mais próximos dos deals ganhos — "
+            f"leads que fecharam estão, em média, {razao_padronizada:.2f}× mais próximos dos deals ganhos — "
             f"é essa separação que valida o uso do kNN para match de closer."
         )
 
@@ -442,7 +458,18 @@ def renderizar_analise():
     st.markdown("### Por que RandomForest e kNN fazem sentido aqui")
 
     auc_txt = f"{auc_aproximado:.3f}" if auc_aproximado else "n/d"
-    razao_bruta = nao_fechou_d.mean() / fechou_d.mean() if fechou_d.mean() > 0 else 0
+
+
+    # Contraste: a mesma razao se a distancia fosse calculada na escala original.
+    # Calculada aqui, e nao fixada no texto, para nao envelhecer com os dados.
+    _d_bruta, _ = modelo_knn.kneighbors(X_array)
+    _merged_bruta = hist.merge(
+        pd.DataFrame({"lead_id": leads["lead_id"], "dist_bruta": _d_bruta.mean(axis=1)}),
+        on="lead_id",
+    )
+    _f_b = _merged_bruta[_merged_bruta["fechou_negocio"] == 1]["dist_bruta"].mean()
+    _nf_b = _merged_bruta[_merged_bruta["fechou_negocio"] == 0]["dist_bruta"].mean()
+    razao_sem_padronizar = _nf_b / _f_b if _f_b > 0 else 0
 
     with st.expander("Justificativa para apresentação em banca", expanded=True):
         st.markdown(f"""
@@ -454,10 +481,13 @@ fatores sim. Modelos lineares simples (como regressão logística) assumiriam qu
 cada variável contribui de forma independente e aditiva; o RandomForest, por
 construir múltiplas árvores de decisão sobre subamostras dos dados, captura
 interações entre variáveis sem que seja preciso especificá-las manualmente. Neste
-experimento, o modelo atingiu AUC-ROC de **{auc_txt}** e correlação de
-**{corr_fit_real:.3f}** com o fit real (a variável oculta que nem o SDR humano nem
-o próprio modelo observam diretamente) — evidência de que o modelo captura sinal
-genuíno, não ruído.
+experimento, o modelo atingiu AUC-ROC de **{auc_txt}** sobre a base de comparação
+— contra 0,762 nos 20% de teste retidos da base de treino, valor reportado na
+Tabela 8 da monografia — e correlação de **{corr_fit_real:.3f}** com o fit real (a
+variável oculta que nem o SDR humano nem o próprio modelo observam diretamente).
+A proximidade entre as duas medidas de AUC, obtidas sobre populações distintas e
+disjuntas, é evidência de que o modelo captura sinal genuíno e generaliza, em vez
+de ter decorado o conjunto de treino.
 
 **Por que kNN para o match de closer.** A lógica de negócio por trás dessa etapa
 não é "prever uma probabilidade", é "encontrar precedentes parecidos" — uma tarefa
@@ -470,14 +500,17 @@ literalmente "este lead foi direcionado a este perfil de abordagem porque é
 parecido com estes N negócios que já fechamos antes", sem precisar explicar
 pesos de uma rede neural ou coeficientes abstratos.
 
-**Honestidade metodológica sobre escala das variáveis.** A distância do kNN, como
-implementada aqui, não normaliza as variáveis antes de calcular — o que significa
-que o orçamento (variando em dezenas de milhares) domina o cálculo de distância
-sobre a urgência (variando entre 0 e 1). Testamos a alternativa normalizada e o
-poder de separação caiu de {razao_bruta:.2f}× para 1.62×, sugerindo que, nesta
-base, o orçamento por si só já carrega grande parte do sinal relevante. Reconhecer
-essa limitação — e mostrar que ela foi testada, não ignorada — é parte do rigor
-que se espera numa defesa de TCC.
+**Sobre a escala das variáveis.** A distância euclidiana só é comparável entre
+atributos que estejam na mesma escala. Sem tratamento, o orçamento — que varia em
+dezenas de milhares — dominaria o cálculo e tornaria a urgência, que varia entre 0
+e 1, praticamente irrelevante. Por isso o kNN aqui opera sobre variáveis
+padronizadas: o `StandardScaler` é ajustado no treino e a mesma transformação é
+aplicada a todo lead consultado depois. O efeito é mensurável nesta base: com
+padronização, os leads que fecharam estão **{razao_padronizada:.2f}×** mais
+próximos dos deals ganhos do que os que não fecharam; sem padronização, a razão
+cai para **{razao_sem_padronizar:.2f}×** — abaixo de 1, ou seja, a separação
+desaparece e o sinal se inverte. A padronização não é um refinamento opcional:
+é a condição para que a medida signifique alguma coisa.
 
 **O ponto central da tese:** nenhum desses modelos "vende melhor" — eles aceleram
 e direcionam o trabalho humano para onde a chance de sucesso é estatisticamente

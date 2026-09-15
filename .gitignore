@@ -4,6 +4,7 @@
 # rodada oficial, e qualquer pessoa regenera essas pastas rodando o script.
 saidas/_arquivo_*/
 saidas/_scratch_*
+saidas/_backup_*/
 
 # Ambiente e cache do Python
 __pycache__/

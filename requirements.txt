@@ -1,7 +1,21 @@
-numpy>=1.26
-pandas>=2.0
-scikit-learn>=1.4
-requests>=2.31
-streamlit>=1.35
+# Versoes fixadas com == , nao minimas, conforme a Tabela 4 da monografia:
+# a reproducao fiel dos resultados exige o mesmo ambiente, porque o
+# RandomForest pode produzir arvores distintas entre versoes do scikit-learn
+# mesmo com random_state fixo.
+#
+# Ambiente da rodada oficial: Python 3.14.6, macOS 26.5.2, Apple M2.
+
+# --- nucleo numerico: define os resultados reportados ------------------------
+numpy==2.5.0
+pandas==3.0.3
+scikit-learn==1.9.0
+scipy==1.18.0
+
+# --- interface e visualizacao: nao participam de nenhum calculo reportado -----
+# Mantidas como versao minima de proposito: o painel e as figuras nao alteram
+# nenhum numero do Capitulo 5, e fixa-las dificultaria a instalacao sem ganho
+# de reprodutibilidade.
+streamlit>=1.58
 plotly>=5.20
 matplotlib>=3.8
+requests>=2.31

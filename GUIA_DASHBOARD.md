@@ -69,7 +69,7 @@ A aba exibe:
 
 Executa os 2.000 leads pelo processo manual completo (sem IA) usando o motor em lote `executar_estado`, que processa um lead inteiro do início ao fim antes do próximo começar. Gera dois artefatos:
 
-- **`historico_estado_a_treino.jsonl`** — cada linha é um evento de um lead numa etapa (timestamp, lead_id, etapa, passou, tempo_gasto_min, detalhes)
+- **`historico_estado_a.jsonl`** — cada linha é um evento de um lead numa etapa (timestamp, lead_id, etapa, passou, tempo_gasto_min, detalhes)
 - **`historico_estado_a_consolidado.csv`** — uma linha por lead com resultado final (fechou_negocio = 0 ou 1) e todas as suas features
 
 Esses arquivos são o **material de treino dos modelos**. Usar o histórico do Estado A garante que os modelos aprendam com dados gerados por um processo sem IA — evitando contaminação (data leakage) com os dados dos estados futuros.
@@ -309,7 +309,7 @@ Nenhuma variável de "qualidade da triagem" entra nessas fórmulas. Uma IA que q
 | Arquivo | Gerado por | Usado por |
 |---|---|---|
 | `dados/leads_base.csv` | Etapa 1 do Setup | Todos os estados, Análise dos modelos |
-| `saidas/historico_estado_a_treino.jsonl` | Etapa 2 do Setup | Etapa 3 do Setup (treino) |
+| `saidas/historico_estado_a.jsonl` | Etapa 2 do Setup | Etapa 3 do Setup (treino) |
 | `saidas/historico_estado_a_consolidado.csv` | Etapa 2 do Setup | Etapa 3 do Setup, Análise dos modelos |
 | `modelos/modelo_score.pkl` | Etapa 3 do Setup | Estado C (ao vivo e em lote), Análise dos modelos |
 | `modelos/modelo_match.pkl` | Etapa 3 do Setup | Estado C (ao vivo e em lote), Análise dos modelos |

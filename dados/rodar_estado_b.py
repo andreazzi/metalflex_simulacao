@@ -20,12 +20,23 @@ from pipeline import executar_estado
 CAMINHO_LEADS = "leads_base.csv"
 CAMINHO_JSONL = "../saidas/historico_estado_b.jsonl"
 
+# Repeticao usada para semear esta execucao avulsa, igual a de
+# rodar_estado_a.py: a semente de cada etapa vem da tripla
+# (repeticao, lead, etapa) -- ver pipeline._seed_pareada. Com repeticao=1 os
+# quatro scripts reproduzem a REPLICA 1 da rodada oficial, o que preserva as
+# duas identidades exatas do desenho (A == B e C == D) tambem fora do
+# experimento pareado. Sem o parametro, cada execucao caia no estado global
+# do modulo random e as identidades se quebravam no painel.
+REPETICAO_REFERENCIA = 1
+
+
 if __name__ == "__main__":
     leads_df = pd.read_csv(CAMINHO_LEADS)
     print(f"Rodando Estado B sobre {len(leads_df)} leads...")
     print("(usa LLM local via Ollama na etapa de proposta -- pode ser lento)\n")
 
-    resumo = executar_estado(ESTADO_B, leads_df, CAMINHO_JSONL)
+    resumo = executar_estado(ESTADO_B, leads_df, CAMINHO_JSONL,
+                             repeticao=REPETICAO_REFERENCIA)
 
     print("\n=== Resumo Estado B ===")
     print(f"Total de leads processados: {resumo['total_leads']}")
