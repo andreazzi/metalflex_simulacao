@@ -13,7 +13,7 @@ Uso:
 Saida:
     ../saidas/figuras/conversao_por_estado.png  (+ .svg)
     ../saidas/figuras/tempo_por_estado.png      (+ .svg)
-    ../saidas/figuras/comparacao_completa.png   (+ .svg)  -- as duas lado a lado, como a Figura 17
+    ../saidas/figuras/comparacao_completa.png   (+ .svg)  -- as duas lado a lado, num so' painel
     ../saidas/figuras/knn_separacao.png         (+ .svg)  -- separacao medida pelo kNN
     ../saidas/figuras/funil_estado_a.png        (+ .svg)  -- volume por etapa no Estado A
     ../saidas/figuras/distribuicoes_modelos.png (+ .svg)  -- escores do RF e similaridade do kNN
@@ -122,7 +122,7 @@ def gerar(caminho_csv: str, n_replicas: int):
     fig.savefig(os.path.join(PASTA_FIGURAS, "tempo_por_estado.svg"))
     plt.close(fig)
 
-    # --- figura 3: as duas lado a lado (formato Figura 17 da monografia) ---
+    # --- painel 3: as duas anteriores lado a lado, num so' grafico ---
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9, 4))
     _barra(ax1, df, "taxa_conversao_pct", "Taxa de conversão", lambda v: f"{v:.2f}%")
     ax1.set_ylabel("Taxa de conversão (%)")
@@ -139,8 +139,8 @@ def gerar(caminho_csv: str, n_replicas: int):
     for nome in ["conversao_por_estado", "tempo_por_estado", "comparacao_completa"]:
         print(f"  {nome}.png (300 dpi), {nome}.svg")
 
-    # Figura 20: nao vem do CSV de replicas, e sim dos modelos e da base de
-    # comparacao -- por isso e' gerada a parte.
+    # As figuras a seguir nao vem do CSV de replicas, e sim dos modelos, da
+    # base de comparacao e do proprio repositorio -- por isso sao geradas a parte.
     gerar_figura_knn()
     gerar_figura_funil()
     gerar_figuras_modelos()
@@ -148,7 +148,7 @@ def gerar(caminho_csv: str, n_replicas: int):
 
 
 def gerar_figura_knn() -> bool:
-    """Figura 20 -- separacao de perfil medida pelo kNN na base de comparacao.
+    """Separacao de perfil medida pelo kNN na base de comparacao.
 
     Painel esquerdo: distribuicao da distancia euclidiana media aos 5 vizinhos
     mais proximos (os deals ganhos do treino), por desfecho real.

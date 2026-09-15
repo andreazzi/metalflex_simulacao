@@ -143,6 +143,15 @@ simulador, a restrição foi definida pela parametrização adotada, não descob
 elo permanece sustentado pela fundamentação teórica, não por evidência empírica deste
 estudo.
 
+## Registro da correção de vazamento de dados
+
+Os diretórios `modelos/backup_com_leakage/` e `saidas/backup_pre_correcao_leakage/`
+preservam os modelos e os resultados **anteriores** à correção do vazamento de
+dados descrita na seção 5.8.6 da monografia. Estão versionados apenas como
+registro histórico dessa correção e **não devem ser usados para reproduzir o
+experimento** — nenhum script do repositório os carrega. A reprodução usa os
+modelos em `modelos/` e o histórico de execuções em `saidas/`.
+
 ## Licença
 
 MIT — ver [LICENSE](LICENSE).
