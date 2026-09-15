@@ -18,6 +18,7 @@ Saida:
     ../saidas/figuras/funil_estado_a.png        (+ .svg)  -- volume por etapa no Estado A
     ../saidas/figuras/distribuicoes_modelos.png (+ .svg)  -- escores do RF e similaridade do kNN
     ../saidas/figuras/escore_e_importancia.png  (+ .svg)  -- escore por desfecho e peso dos atributos
+    ../saidas/figuras/estrutura_repositorio.png (+ .svg)  -- arvore de diretorios do repositorio
 
 A figura do kNN reproduz, em matplotlib, os dois paineis que o dashboard
 desenha em Plotly (dashboard/analise_modelos.py, BLOCO 2): as mesmas fontes
@@ -143,6 +144,7 @@ def gerar(caminho_csv: str, n_replicas: int):
     gerar_figura_knn()
     gerar_figura_funil()
     gerar_figuras_modelos()
+    gerar_figura_arvore()
 
 
 def gerar_figura_knn() -> bool:
@@ -409,6 +411,118 @@ def gerar_figuras_modelos():
     print("  escore_e_importancia.png (300 dpi), escore_e_importancia.svg")
     print(f"    importâncias: " + ", ".join(
         f"{c} {100*v:.1f}%" for c, v in zip(FEATURES_KNN, imp)))
+    return True
+
+
+def gerar_figura_arvore():
+    """Arvore de diretorios do repositorio, lida do proprio repositorio.
+
+    A fonte e' `git ls-files`, de modo que a figura mostra exatamente o que
+    esta' versionado -- nem arquivos locais nao publicados, nem pastas
+    ignoradas. Sem git disponivel, cai para a varredura do sistema de
+    arquivos aplicando as mesmas exclusoes do .gitignore.
+
+    Grupos repetitivos sao colapsados com a contagem, para que a figura
+    caiba em uma folha sem omitir a estrutura.
+    """
+    import subprocess
+    from collections import defaultdict
+
+    raiz = os.path.abspath(os.path.join(PASTA_DADOS, ".."))
+    try:
+        saida = subprocess.run(["git", "-C", raiz, "ls-files"],
+                               capture_output=True, text=True, timeout=30)
+        arquivos = [l for l in saida.stdout.splitlines() if l.strip()]
+        origem = "git ls-files"
+    except Exception:
+        arquivos, origem = [], "varredura"
+    if not arquivos:
+        ignorar = ("_arquivo_", "_backup_", "_scratch_", "__pycache__", ".git/",
+                   ".claude/", ".DS_Store")
+        for base, dirs, fs in os.walk(raiz):
+            rel = os.path.relpath(base, raiz)
+            if any(x in rel for x in ignorar):
+                continue
+            for f in fs:
+                caminho = os.path.normpath(os.path.join(rel, f))
+                if not any(x in caminho for x in ignorar):
+                    arquivos.append(caminho.replace(os.sep, "/"))
+        origem = "varredura"
+
+    # colapsa os grupos repetitivos, preservando a contagem
+    COLAPSAR = {
+        "saidas/figuras": "as sete figuras de dados, em PNG e SVG",
+        "saidas/sensibilidade": "os cinco cenários da análise de sensibilidade",
+    }
+    por_dir = defaultdict(list)
+    for a in arquivos:
+        por_dir["/".join(a.split("/")[:-1])].append(a.split("/")[-1])
+
+    linhas = []           # (texto, tipo) com tipo em {dir, arq, nota}
+    def montar(pai, prefixo):
+        subdirs = sorted({d for d in por_dir
+                          if d and "/".join(d.split("/")[:-1]) == pai and d != pai})
+        arqs = sorted(por_dir.get(pai, []))
+        itens = [(d, True) for d in subdirs] + [(a, False) for a in arqs]
+        for k, (nome, e_dir) in enumerate(itens):
+            ult = k == len(itens) - 1
+            ramo = "└── " if ult else "├── "
+            if e_dir:
+                curto = nome.split("/")[-1]
+                linhas.append((prefixo + ramo + curto + "/", "dir"))
+                if nome in COLAPSAR:
+                    n = len(por_dir.get(nome, []))
+                    linhas.append((prefixo + ("    " if ult else "│   ")
+                                   + f"└── ({n} arquivos — {COLAPSAR[nome]})", "nota"))
+                else:
+                    montar(nome, prefixo + ("    " if ult else "│   "))
+            else:
+                linhas.append((prefixo + ramo + nome, "arq"))
+
+    montar("", "")
+    n_dir = len({d for d in por_dir if d})
+    n_arq = len(arquivos)
+
+    # Duas colunas: 70 linhas numa coluna so' obrigariam um corpo ilegivel na
+    # largura da folha. O corte e' feito num limite de diretorio de primeiro
+    # nivel, para nao partir uma subarvore ao meio.
+    inicios = [k for k, (t, tp) in enumerate(linhas)
+               if tp == "dir" and not t.startswith(("│", " "))]
+    meio = len(linhas) / 2
+    corte = min(inicios, key=lambda k: abs(k - meio)) if inicios else len(linhas) // 2
+    col1, col2 = linhas[:corte], linhas[corte:]
+    n_lin = max(len(col1), len(col2))
+
+    altura = max(5.0, 0.21 * (n_lin + 4))
+    fig, ax = plt.subplots(figsize=(9.2, altura))
+    ax.axis("off")
+    ax.set_xlim(0, 2)
+    ax.set_ylim(0, n_lin + 3)
+
+    def desenhar(coluna, x, titulo=None):
+        y = n_lin + 2
+        if titulo:
+            ax.text(x, y, titulo, family="monospace", fontsize=10,
+                    fontweight="bold", color=CORES_ESTADO["Estado C"], va="top")
+        y -= 1
+        for texto, tipo in coluna:
+            cor = {"dir": CORES_ESTADO["Estado C"], "nota": "#6b6b6b"}.get(tipo, "#1a1a1a")
+            ax.text(x, y, texto, family="monospace", fontsize=8.8, color=cor,
+                    fontweight="bold" if tipo == "dir" else "normal",
+                    style="italic" if tipo == "nota" else "normal", va="top")
+            y -= 1
+
+    desenhar(col1, 0.01, "metalflex_simulacao/")
+    desenhar(col2, 1.02, "(continuação)")
+    ax.text(0.01, 0.6, f"{n_dir} diretórios, {n_arq} arquivos versionados",
+            family="monospace", fontsize=9, color="#3a3a3a", va="top")
+    fig.tight_layout(pad=0.4)
+    fig.savefig(os.path.join(PASTA_FIGURAS, "estrutura_repositorio.png"), dpi=300)
+    fig.savefig(os.path.join(PASTA_FIGURAS, "estrutura_repositorio.svg"))
+    plt.close(fig)
+    print("  estrutura_repositorio.png (300 dpi), estrutura_repositorio.svg")
+    print(f"    fonte: {origem} — {n_dir} diretórios, {n_arq} arquivos, "
+          f"{len(linhas)} linhas")
     return True
 
 
